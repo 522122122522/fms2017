@@ -1,0 +1,29 @@
+.layui-nav1{
+    flex: auto;
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+.layui-nav-item1{
+    position: relative;
+    height: auto;
+    width: 50px;
+    background: blanchedalmond;
+}
+
+.fms-header{
+    position:fixed;
+    z-index: 10000;
+    left:0;
+    top:0;
+    width:100%;
+    height:65px;
+    background-color:#393D49;
+    color: #ffffff
+}
+
+.fms-main{
+    position:relative;
+    left: 220px;
+    top: 18px;
+}

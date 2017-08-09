@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>fmsformoregreen</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./layui/css/mycss.css">
+</head>
+<body>
+
+<!-- 你的HTML代码 -->
+<div class="fms-header" lay-filter="test1">
+    <ul class="fms-main">
+        <li class="layui-this" lay-id="111" >首页</li>
+        <li lay-id="222">产品</li>
+        <li lay-id="333">在线留言</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">1</div>
+        <div class="layui-tab-item">2</div>
+        <div class="layui-tab-item">3</div>
+        <div class="layui-tab-item">4</div>
+        <div class="layui-tab-item">5</div>
+    </div>
+</div>
+
+<script src="./layui/layui.js"></script>
+<script>
+
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element();
+
+        //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+        var layid = location.hash.replace(/^#test1=/, '');
+        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+
+        //监听Tab切换，以改变地址hash值
+        element.on('tab(test1)', function(){
+            location.hash = 'test1='+ this.getAttribute('lay-id');
+        });
+    });
+</script>
+
+</body>
+</html>
