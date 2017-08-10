@@ -10,20 +10,69 @@
 <body>
 
 <!-- 你的HTML代码 -->
-<div class="fms-header" lay-filter="test1">
-    <ul class="fms-main">
-        <li class="layui-this" lay-id="111" >首页</li>
-        <li lay-id="222">产品</li>
-        <li lay-id="333">在线留言</li>
-    </ul>
-    <div class="layui-tab-content">
-        <div class="layui-tab-item layui-show">1</div>
-        <div class="layui-tab-item">2</div>
-        <div class="layui-tab-item">3</div>
-        <div class="layui-tab-item">4</div>
-        <div class="layui-tab-item">5</div>
+<!--导航栏-->
+<div class="fms-nav-main">
+    <div class="fms-header" lay-filter="test1">
+        <ul class="layui-nav" lay-filter="test2">
+            <li class="layui-nav-item" lay-id="111"><a href="">首页</a></li>
+            <li class="layui-nav-item" lay-id="222"><a href="">产品</a></li>
+            <li class="layui-nav-item" lay-id="333"><a href="">关于我们</a></li>
+            <li class="layui-nav-item  layui-this" lay-id="444"><a href="">在线留言</a></li>
+        </ul>
+    </div>
+    <div class="fms-search">
+        <input class="fms-keyword" placeholder="请输入关键字">
     </div>
 </div>
+<!--主页-->
+<!--<div class="fms-online">-->
+    <!--<div class="fly-panel">-->
+        <!--<div class="fly-none">-->
+            <!--<h2><i class="fms-not-found"></i></h2>-->
+            <!--<p>你瞧！页面或者数据被<a href="http://www.wideplus.com/"> biubiubiubiu </a>运到火星了</p>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="fms-online">
+    <div class="layui-form layui-form-pane layui-tab-item layui-show">
+    <form method="post">
+        <div class="layui-form-item">
+            <label for="L_email" class="layui-form-label" style="background-color: #fbfbfb;color: #222222 ">您的邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_email" name="email" required lay-verify="email" autocomplete="off" value="" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_username" class="layui-form-label" style="background-color: #fbfbfb;color: #222222 ">您的称呼</label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_username" name="username" required lay-verify="required" autocomplete="off" value="" class="layui-input">
+            </div>
+            <div class="layui-inline">
+                <div class="layui-input-inline">
+                    <input type="radio" name="sex" value="0" checked title="男">
+                    <input type="radio" name="sex" value="1" title="女">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_city" class="layui-form-label" style="background-color: #fbfbfb;color: #222222 ">所在城市</label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_city" name="city" autocomplete="off" value="" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text" style="width: 50%;">
+            <label for="L_sign" class="layui-form-label" style="padding-left: 50%;background-color: #fbfbfb;color: #222222 ">留言板</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请您在这里说下您需求吧" id="L_sign"  name="sign" autocomplete="off" class="layui-textarea" style="height: 80px;"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item" style="left: 25%;position: absolute">
+            <button class="layui-btn"  style="background-color: #009688;color: #ffffff " key="set-mine" lay-filter="*" lay-submit>提交留言</button>
+        </div>
+    </form>
+</div>
+</div>
+
 
 <script src="./layui/layui.js"></script>
 <script>
@@ -32,14 +81,16 @@
     layui.use('element', function(){
         var element = layui.element();
 
+        $(".layui-this").removeClass("layui-this");
+        $("selector").addClass("layui-this");
         //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
-        var layid = location.hash.replace(/^#test1=/, '');
-        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
-
-        //监听Tab切换，以改变地址hash值
-        element.on('tab(test1)', function(){
-            location.hash = 'test1='+ this.getAttribute('lay-id');
-        });
+//        var layid = location.hash.replace(/^#test2=/, '');
+//        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+//
+//        //监听Tab切换，以改变地址hash值
+//        element.on('tab(test1)', function(){
+//            location.hash = 'test1='+ this.getAttribute('lay-id');
+//        });
     });
 </script>
 

@@ -12,18 +12,91 @@
 }
 
 .fms-header{
-    position:fixed;
+    position:absolute;
     z-index: 10000;
-    left:0;
+    left:100px;
     top:0;
-    width:100%;
-    height:65px;
-    background-color:#393D49;
+    width:500px;
+    height:auto;
+    background: dodgerblue;
     color: #ffffff
 }
 
-.fms-main{
-    position:relative;
-    left: 220px;
-    top: 18px;
+.fms-search{
+    position:absolute;
+    right:60px;
+    top:20px;
+    width:200px;
+    height:21px;
+    background: #ffffff;
+    color: #666666;
+    background: url("../images/search-bg.jpg")  no-repeat;
+    text-align: left;
+    padding: 3px;
+    clear: both;
+    overflow: hidden;
 }
+
+.fms-keyword{
+    position:absolute;
+    width:135px;
+    height: 22px;
+    top:0.5px;
+    left: 0;
+    vertical-align: middle;
+    padding-left:3px;
+    color: #666666;
+    text-align: left;
+    clear: both;
+    overflow: hidden;
+}
+
+.fms-nav-main{
+    position:fixed;
+    width: 100%;
+    height: 65px;
+    /*background: #4F4F4F;*/
+    background: #393D49;
+
+}
+
+.fms-main{
+    position:absolute;
+    left: 220px;
+}
+
+.fms-tab-title1{
+    position:relative;
+    left:0;height:40px;
+    white-space:nowrap;
+    font-size:0;
+    border-bottom:1px solid #e2e2e2;transition:all .2s;
+    -webkit-transition:all .2s
+}
+
+/*在线留言*/
+
+.fms-online{
+    position:absolute;
+    top:80px;
+    width: 100%;
+    padding: 10px;
+    min-height: 600px;
+    margin: 0 auto 15px;
+}
+
+.fms-not-found{
+    position:absolute;
+    height: 243px;
+    width: 268px;
+    vertical-align: middle;
+    background: url("../images/404.jpg");
+    bottom: 20px;
+}
+.fly-panel{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 2px;
+}
+/* 404或提示 */
+.fly-none{min-height: 600px; text-align: center; padding-top:50px; color: #999;}
