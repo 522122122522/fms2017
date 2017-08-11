@@ -85,6 +85,16 @@
     margin: 0 auto 15px;
 }
 
+.fms-sy{
+    position:absolute;
+    top:65px;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    min-height: 600px;
+    margin: 0 auto 15px;
+}
+
 .fms-not-found{
     position:absolute;
     height: 243px;
