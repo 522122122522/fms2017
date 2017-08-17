@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>fmsformoregreen</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./layui/css/mycss.css">
+    <link rel="stylesheet" href="layui/css/css/swiper-3.4.2.min.css">
+
+    <script src="layui/script/swiper-3.4.2.min.js"></script>
+    <script src="./layui/layui.js"></script>
+</head>
+<body>
+
+<!-- 你的HTML代码 -->
+<!--导航栏-->
+<div class="fms-nav-main">
+    <div class="fms-header totop" lay-filter="test1">
+        <ul class="layui-nav" lay-filter="test2">
+            <li class="layui-nav-item" lay-id="111"><a href="scatter-map.html">首页</a></li>
+            <li class="layui-nav-item layui-this" lay-id="222"><a href="javascript:void(0)">产品中心</a></li>
+            <li class="layui-nav-item" lay-id="333"><a href="javascript:void(0)">关于我们</a></li>
+            <li class="layui-nav-item " lay-id="444"><a href="index.html">在线留言</a></li>
+        </ul>
+    </div>
+    <div class="fms-search">
+        <input class="fms-keyword" placeholder="请输入关键字">
+    </div>
+</div>
+<div class="layui-nav-side layui-bg-black layui-side" style="top: 65px">
+    <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree" lay-filter="demo">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;">喷嘴</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">实心锥形喷雾</a></dd>
+                    <dd><a href="javascript:;">空心锥形喷雾</a></dd>
+                    <dd><a href="javascript:;">扇形喷雾</a></dd>
+                    <dd><a href="javascript:;">空气雾化喷嘴喷雾</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:">水针系列</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;">实心锥形喷雾</a></dd>
+                    <dd><a href="javascript:;">空心锥形喷雾</a></dd>
+                    <dd><a href="javascript:;">扇形喷雾</a></dd>
+                    <dd><a href="javascript:;">空气雾化喷嘴喷雾</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">槽罐清洗</a></li>
+            <li class="layui-nav-item"><a href="">吹气产品</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-body layui-tab-content site-demo">
+    <div class="layui-tab-item layui-show">
+        <div class="layui-main">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>实心锥形喷雾</legend>
+            </fieldset>
+            <div class="swiper-container" style="line-height: 300px;color: #fff;font-size: 36px;text-align: center;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide layui-bg-green">
+                        <img style="height: 480px;width: 640px" src="./layui/images/sxpz_pic_0.jpg">
+                    </div>
+                    <div class="swiper-slide layui-bg-cyan">
+                        <img style="height: 480px;width: 640px" src="./layui/images/sxpz_pic_1.jpg">
+                    </div>
+                    <div class="swiper-slide layui-bg-orange">
+                        <img style="height: 480px;width: 640px" src="./layui/images/sxpz_pic_2.png">
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- 如果需要滚动条 -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+            <!--<div class="pic-bolder">-->
+                <!--<img style="height: 480px;width: 640px" src="./layui/images/1-1601061JU35E.jpg">-->
+            <!--</div>-->
+        </div>
+
+    </div>
+</div>
+<script>
+
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element();
+
+        $(".layui-this").removeClass("layui-this");
+        $("selector").addClass("layui-this");
+        //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+//        var layid = location.hash.replace(/^#test2=/, '');
+//        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+//
+//        //监听Tab切换，以改变地址hash值
+//        element.on('tab(test1)', function(){
+//            location.hash = 'test1='+ this.getAttribute('lay-id');
+//        });
+    });
+    var mySwiper = new Swiper('.swiper-container',{
+        loop: true,
+        autoplay: 3000,
+    });
+</script>
+
+</body>
+</html>
