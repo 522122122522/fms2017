@@ -63,26 +63,67 @@
             </fieldset>
             <div class="swiper-container" style="line-height: 300px;color: #fff;font-size: 36px;text-align: center;">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide layui-bg-green">
-                        <img style="height: 480px;width: 640px" src="./layui/images/sxpz_pic_0.jpg">
+                    <div class="swiper-slide layui-bg-cyan">
+                        <img style="height: 320px;width: 560px" src="./layui/images/sxpz_pic_0.jpg">
                     </div>
                     <div class="swiper-slide layui-bg-cyan">
-                        <img style="height: 480px;width: 640px" src="./layui/images/sxpz_pic_1.jpg">
+                        <img style="height: 320px;width: 560px" src="./layui/images/sxpz_pic_1.jpg">
                     </div>
-                    <div class="swiper-slide layui-bg-orange">
-                        <img style="height: 480px;width: 640px" src="./layui/images/sxpz_pic_2.png">
+                    <div class="swiper-slide layui-bg-cyan">
+                        <img style="height: 320px;width: 560px" src="./layui/images/sxpz_pic_2.png">
                     </div>
                 </div>
-                <!-- 如果需要分页器 -->
-                <div class="swiper-pagination"></div>
 
-                <!-- 如果需要导航按钮 -->
-                <div class="swiper-button-prev"></div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
                 <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
 
                 <!-- 如果需要滚动条 -->
-                <div class="swiper-scrollbar"></div>
+                <!--<div class="swiper-scrollbar"></div>-->
             </div>
+            <fieldset class="layui-elem-field">
+                <legend style="font-style: normal;font-weight: bold;color: #222222">材质</legend>
+                <div class="layui-field-box" style="font-style: oblique;font-size: 17px">
+                    金属是最普遍应用的材质，如不锈钢、黄铜和铁。我们也能提供PP、PVC、PVDF、特富龙或哈氏合金等材质。
+                </div>
+            </fieldset>
+
+            <fieldset class="layui-elem-field">
+                <legend style="font-style: normal;font-weight: bold;color: #222222">喷雾角度</legend>
+                <div class="layui-field-box" style="font-style: oblique;font-size: 17px">
+                    0~170度喷雾角度可选。
+                </div>
+            </fieldset>
+
+            <fieldset class="layui-elem-field">
+                <legend style="font-style: normal;font-weight: bold;color: #222222">连接方式</legend>
+                <div class="layui-field-box" style="font-style: oblique;font-size: 17px">
+                    螺纹连接，快速链接和单元式喷嘴主体可选。
+                </div>
+            </fieldset>
+
+            <fieldset class="layui-elem-field">
+                <legend style="font-style: normal;font-weight: bold;color: #222222">附件</legend>
+                <div class="layui-field-box" style="font-style: oblique;font-size: 17px">
+                    过滤器，堵块，转换附件，连接附件，阀门等可选
+                </div>
+            </fieldset>
+
+            <fieldset class="layui-elem-field">
+                <legend style="font-style: normal;font-weight: bold;color: #222222">适用于</legend>
+                <div class="layui-field-box" style="font-style: oblique;font-size: 17px">
+                    <br>喷涂，润滑，化学品喷雾</br>
+                    <br>冷却，空气增湿，产品润湿</br>
+                    <br>清洗，冲洗，漂洗</br>
+                    <br>粉尘控制</br>
+                    <br>消防</br>
+                    <br>食品制造</br>
+                </div>
+            </fieldset>
+
             <!--<div class="pic-bolder">-->
                 <!--<img style="height: 480px;width: 640px" src="./layui/images/1-1601061JU35E.jpg">-->
             <!--</div>-->
@@ -107,9 +148,14 @@
 //            location.hash = 'test1='+ this.getAttribute('lay-id');
 //        });
     });
-    var mySwiper = new Swiper('.swiper-container',{
-        loop: true,
-        autoplay: 3000,
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        hashnav: true,
+        hashnavWatchState: true
     });
 </script>
 
